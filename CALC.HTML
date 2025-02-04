@@ -76,6 +76,13 @@
             margin:2px;
             overflow-y:scroll;
         }
+        #clear{
+            color:white;
+            border:1px; solid black;
+            padding:5px;
+            margin:5px;
+            cursor:pointer;
+        }
     </style>
 </head>
 <body>
@@ -114,7 +121,7 @@
         </div>
         
         <div class="history">
-            <b style="font-family: 'Courier New', Courier, monospace;">calculation History</b>
+            <b style="font-family: 'Courier New', Courier, monospace;">calculation History <span id="clear">clear</span></b>
             <p id="history"></p>
         </div>
 
@@ -157,6 +164,11 @@
                 })
 
             })
+        let clear = document.getElementById("clear");
+        clear.addEventListener("click",()=>{
+            let data =document.getElementById("history");
+            data.innerText="";
+})
         </script>
 </body>
 </html>
